@@ -10,9 +10,6 @@ int main() {
     Einstein.calcularIdade(8, 3, 2023);
     Newton.calcularIdade(8, 3, 2023);
 
-    // printf("Einstein teria %d\n", Einstein.getIdade());
-    // printf("Newton teria %d\n", Newton.getIdade());
-
     getchar();
     return 0;
 }

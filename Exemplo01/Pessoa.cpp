@@ -18,4 +18,3 @@ void Pessoa::calcularIdade(int diaAtual, int mesAtual, int anoAtual) {
 
     printf("%s teria %d anos\n", nomeP, idadeP);
 }
-// int Pessoa::getIdade() { return idadeP; }
