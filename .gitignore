@@ -5,3 +5,4 @@ node_modules
 .vscode
 *.exe
 Slides1
+obj
