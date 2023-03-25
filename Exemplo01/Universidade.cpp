@@ -2,16 +2,20 @@
 
 #include "stdafx.h"
 
-Universidade::Universidade(const char* n) { strcpy(nome, n); }
+Universidade::Universidade() { strcpy(nome, ""); }
 
 Universidade::~Universidade() {}
 
 void Universidade::setNome(const char* n) { strcpy(nome, n); }
+
 void Universidade::setDepAssociado(Departamento* nomeDpt) {
-    depAssociado = nomeDpt;
+    if (nomeDpt != NULL) pDepAssociado.push_back(nomeDpt);
 }
 char* Universidade::getNome() { return nome; }
 
-char* Universidade::getNomeDpt() {
-    return depAssociado->getNomeDepartamento();
-};
+void Universidade::imprimeDptos() {
+    pDepAssociado.size();
+    for (int i = 0; i < 50; i++) {
+        cout << pDepAssociado[i]->getNomeDepartamento() << endl;
+    }
+}

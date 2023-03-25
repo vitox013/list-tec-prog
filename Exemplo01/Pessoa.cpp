@@ -1,5 +1,4 @@
 #include "Pessoa.h"
-
 #include "stdafx.h"
 
 using std::cout;
@@ -35,15 +34,5 @@ void Pessoa::calcIdadeImprime(int diaAtual, int mesAtual, int anoAtual) {
     imprimeIdade();
 }
 
-void Pessoa::setUnivFiliado(Universidade* pu) { pUnivFiliado = pu; }
-void Pessoa::ondeTrabalho() {
-    cout << nomeP << " trabalha para a " << pUnivFiliado->getNome() << endl;
-}
 
-void Pessoa::setDptFiliado(Departamento* pdpt) { pDptoFiliado = pdpt; }
-
-void Pessoa::qualDptTrabalho() {
-    cout << nomeP << " trabalha no departamento "
-         << pDptoFiliado->getNomeDepartamento() << endl;
-}
 

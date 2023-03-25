@@ -1,17 +1,19 @@
 #pragma once
+#include <vector>
+using namespace std;
 #include "Departamento.h"
 
 class Universidade {
    private:
     char nome[30];
 
-    Departamento *depAssociado;
+    vector<Departamento *> pDepAssociado;
 
    public:
-    Universidade(const char *nome = "");
+    Universidade();
     ~Universidade();
     void setNome(const char *nome);
     void setDepAssociado(Departamento *depAssociado);
     char *getNome();
-    char* getNomeDpt();
+    void imprimeDptos();
 };
