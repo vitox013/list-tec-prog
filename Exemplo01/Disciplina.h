@@ -9,8 +9,9 @@ class Disciplina {
     char nomeDisc[100];
     char areaConhecimento[100];
 
-    Departamento* pDpto;
-	Disciplina* pProx;
+    Departamento* pDptoAssociado;
+    Disciplina* pProx;
+    Disciplina* pAnte;
 
    public:
     Disciplina();
@@ -19,10 +20,12 @@ class Disciplina {
     int getId();
     void setNome(const char* nome);
     char* getNome();
-	void setDpto(Departamento* dpto);
-	Departamento* getDpto();
-	void setProx(Disciplina* pProx);
-	Disciplina* getProx();
+    void setDpto(Departamento* dpto);
+    Departamento* getDpto();
+    void setProx(Disciplina* pProx);
+    Disciplina* getProx();
+    void setAnte(Disciplina* pAnte);
+    Disciplina* getAnte();
 };
 
 #endif  //_DISCIPLINA_H

@@ -13,7 +13,7 @@ class Principal {
     Universidade UTFPR, Princeton, Cambridge, UFPR;
     Departamento DAINF, FisicaPrinceton, MatematicaCambridge, DEARTES, DAELN;
 
-    Disciplina Calculo, Fisica, Algoritmos, Artes, Eletronica;
+    Disciplina Calculo, Fisica, Algoritmos, Artes, Musica, Eletronica, Mecatronica;
 
     int diaAtual;
     int mesAtual;

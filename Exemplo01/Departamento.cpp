@@ -37,6 +37,7 @@ void Departamento::incluirDisciplina(Disciplina* pD) {
             pDiscAtual = pD;
         } else {
             pDiscAtual->setProx(pD);
+            pD->setAnte(pDiscAtual);
             pDiscAtual = pD;
         }
     }
@@ -46,7 +47,18 @@ void Departamento::listarDisciplinas() {
     Disciplina* pAux = pDiscPrim;
     while (pAux != NULL) {
         cout << "A disciplina " << pAux->getNome()
-             << " pertence ao Departamento de " << getNomeDepartamento() << endl;
+             << " pertence ao Departamento de " << getNomeDepartamento()
+             << endl;
         pAux = pAux->getProx();
+    }
+}
+
+void Departamento::listarDisciplinas2() {
+    Disciplina* pAux = pDiscAtual;
+    while (pAux != NULL) {
+        cout << "A disciplina " << pAux->getNome()
+             << " pertence ao Departamento de " << getNomeDepartamento()
+             << endl;
+        pAux = pAux->getAnte();
     }
 }

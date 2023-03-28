@@ -21,4 +21,5 @@ class Departamento {
     Universidade* getUniversidade();
     void incluirDisciplina(Disciplina* pD);
     void listarDisciplinas();
+    void listarDisciplinas2();
 };

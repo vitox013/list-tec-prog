@@ -21,6 +21,6 @@ void Professor::ondeTrabalho() {
 void Professor::setDptFiliado(Departamento* pdpt) { pDptoFiliado = pdpt; }
 
 void Professor::qualDptTrabalho() {
-    cout << nomeP << " trabalha no departamento de"
+    cout << nomeP << " trabalha no departamento de "
          << pDptoFiliado->getNomeDepartamento() << endl;
 }

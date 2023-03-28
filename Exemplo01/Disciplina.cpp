@@ -7,13 +7,15 @@ Disciplina::Disciplina() {
     strcpy(nomeDisc, "");
     strcpy(areaConhecimento, "");
     id = -1;
-    pDpto = NULL;
+    pDptoAssociado = NULL;
     pProx = NULL;
+    pAnte = NULL;
 }
 
 Disciplina::~Disciplina() {
-    pDpto = NULL;
+    pDptoAssociado = NULL;
     pProx = NULL;
+    pAnte = NULL;
 }
 
 void Disciplina::setId(int n) { id = n; }
@@ -24,10 +26,17 @@ void Disciplina::setNome(const char* nome) { strcpy(nomeDisc, nome); }
 
 char* Disciplina::getNome() { return nomeDisc; }
 
-void Disciplina::setDpto(Departamento* dpto) { pDpto = dpto; }
+void Disciplina::setDpto(Departamento* dpto) {
+    pDptoAssociado = dpto;
+    dpto->incluirDisciplina(this);
+}
 
-Departamento* Disciplina::getDpto() { return pDpto; }
+Departamento* Disciplina::getDpto() { return pDptoAssociado; }
 
 void Disciplina::setProx(Disciplina* pProx) { this->pProx = pProx; }
 
 Disciplina* Disciplina::getProx() { return pProx; }
+
+void Disciplina::setAnte(Disciplina* pAnterior) { pAnte = pAnterior; }
+
+Disciplina* Disciplina::getAnte() { return pAnte; }

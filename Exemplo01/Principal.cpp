@@ -53,12 +53,12 @@ void Principal::InicializaDepartamentos() {
     MatematicaCambridge.setUniversidade(&Cambridge);
 
     // "Filiando" os departamentos a disciplinas
-    DAINF.incluirDisciplina(&Calculo);
-    DAINF.incluirDisciplina(&Algoritmos);
-    FisicaPrinceton.incluirDisciplina(&Fisica);
-    MatematicaCambridge.incluirDisciplina(&Calculo);
-    DEARTES.incluirDisciplina(&Artes);
-    DAELN.incluirDisciplina(&Eletronica);
+    // DAINF.incluirDisciplina(&Calculo);
+    // DAINF.incluirDisciplina(&Algoritmos);
+    // FisicaPrinceton.incluirDisciplina(&Fisica);
+    // MatematicaCambridge.incluirDisciplina(&Calculo);
+    // DEARTES.incluirDisciplina(&Artes);
+    // DAELN.incluirDisciplina(&Eletronica);
 }
 
 void Principal::InicializaProfessores() {
@@ -84,13 +84,17 @@ void Principal::InicializaDisciplinas() {
     Fisica.setNome("Fisica");
     Algoritmos.setNome("Algoritmos");
     Artes.setNome("Artes");
+    Musica.setNome("Musica");
     Eletronica.setNome("Eletronica");
+    Mecatronica.setNome("Mecatronica");
 
     // "Filiando" as disciplinas a departamentos
     Calculo.setDpto(&DAINF);
-    Fisica.setDpto(&FisicaPrinceton);
+    Fisica.setDpto(&DAINF);
     Algoritmos.setDpto(&DAINF);
     Artes.setDpto(&DEARTES);
+    Musica.setDpto(&DEARTES);
+    Mecatronica.setDpto(&DAELN);
     Eletronica.setDpto(&DAELN);
 }
 
@@ -120,6 +124,14 @@ void Principal::ListeDiscDptos() {
     MatematicaCambridge.listarDisciplinas();
     DEARTES.listarDisciplinas();
     DAELN.listarDisciplinas();
+
+    cout << "\n ---------" << endl;
+
+    DAINF.listarDisciplinas2();
+    FisicaPrinceton.listarDisciplinas2();
+    MatematicaCambridge.listarDisciplinas2();
+    DEARTES.listarDisciplinas2();
+    DAELN.listarDisciplinas2();
 }
 
 void Principal::Executar() {
