@@ -17,8 +17,8 @@ Principal::Principal() {
 void Principal::Inicializa() {
     InicializaUniversidades();
     InicializaDepartamentos();
+    InicializaAlunos();
     InicializaDisciplinas();
-    // InicializaAlunos();
     InicializaProfessores();
 }
 
@@ -78,6 +78,12 @@ void Principal::InicializaProfessores() {
     Newton.setDptFiliado(&MatematicaCambridge);
 }
 
+void Principal::InicializaAlunos() {
+    Vitor.inicializa(17, 8, 1999, "Vitor Muller");
+    Joao.inicializa(30, 1, 1982, "Joao Carlos");
+    Fernanda.inicializa(24, 2, 1978, "Fernanda Alves");
+}
+
 void Principal::InicializaDisciplinas() {
     // inicializa os objetos disciplinas
     Calculo.setNome("Calculo");
@@ -96,6 +102,13 @@ void Principal::InicializaDisciplinas() {
     Musica.setDpto(&DEARTES);
     Mecatronica.setDpto(&DAELN);
     Eletronica.setDpto(&DAELN);
+
+    Calculo.incluaAluno(&Vitor);
+    Calculo.incluaAluno(&Joao);
+    Calculo.incluaAluno(&Fernanda);
+
+    Eletronica.incluaAluno(&Vitor);
+    Eletronica.incluaAluno(&Fernanda);
 }
 
 // Funcoes do executar
@@ -134,9 +147,24 @@ void Principal::ListeDiscDptos() {
     DAELN.listarDisciplinas2();
 }
 
+void Principal::ListeAlunosDisc() {
+    Calculo.listeAlunos();
+    cout << "\n";
+    Calculo.listeAlunos2();
+    Fisica.listeAlunos();
+    cout << "\n";
+    Artes.listeAlunos();
+    cout << "\n";
+    Eletronica.listeAlunos();
+    cout << "\n";
+    Eletronica.listeAlunos2();
+    cout << "\n";
+}
+
 void Principal::Executar() {
     CalcIdadeProfs();
     UnivOndeProfsTrabalham();
     DepOndeProfsTrabalham();
     ListeDiscDptos();
+    ListeAlunosDisc();
 }

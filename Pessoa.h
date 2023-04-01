@@ -17,4 +17,5 @@ class Pessoa {
     void calcularIdade(int diaAtual, int mesAtual, int anoAtual);
     void imprimeIdade();
     void calcIdadeImprime(int diaAtual, int mesAtual, int anoAtual);
+    char* getNome();
 };

@@ -34,5 +34,9 @@ void Pessoa::calcIdadeImprime(int diaAtual, int mesAtual, int anoAtual) {
     imprimeIdade();
 }
 
+char* Pessoa::getNome(){
+    return nomeP;
+}
+
 
 

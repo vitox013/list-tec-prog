@@ -6,15 +6,12 @@
 
 class Principal {
    private:
-    Professor Simao;
-    Professor Newton;
-    Professor Einstein;
-
+    Professor Simao, Newton, Einstein;
     Universidade UTFPR, Princeton, Cambridge, UFPR;
     Departamento DAINF, FisicaPrinceton, MatematicaCambridge, DEARTES, DAELN;
-
-    Disciplina Calculo, Fisica, Algoritmos, Artes, Musica, Eletronica, Mecatronica;
-
+    Disciplina Calculo, Fisica, Algoritmos, Artes, Musica, Eletronica,
+        Mecatronica;
+    Aluno Vitor, Joao, Fernanda;
     int diaAtual;
     int mesAtual;
     int anoAtual;
@@ -26,7 +23,7 @@ class Principal {
     void InicializaUniversidades();
     void InicializaDepartamentos();
     void InicializaDisciplinas();
-    // void InicializaAlunos();
+    void InicializaAlunos();
     void InicializaProfessores();
 
     void Executar();
@@ -35,4 +32,5 @@ class Principal {
     void UnivOndeProfsTrabalham();
     void DepOndeProfsTrabalham();
     void ListeDiscDptos();
+    void ListeAlunosDisc();
 };
