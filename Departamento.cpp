@@ -1,19 +1,20 @@
 #include "Departamento.h"
 
 #include "Disciplina.h"
+#include "ListaDisciplinas.h"
 #include "Universidade.h"
 #include "stdafx.h"
 
 Departamento::Departamento() {
     id = -1;
     strcpy(nomeDepartamento, "");
-    pDiscPrim = NULL;
-    pDiscAtual = NULL;
+    pObjLDisciplinas = new ListaDisciplinas(-1, "");
 }
 
 Departamento::~Departamento() {
-    pDiscAtual = NULL;
-    pDiscPrim = NULL;
+    if (pObjLDisciplinas) {
+        delete pObjLDisciplinas;
+    }
 }
 
 void Departamento::setId(int id) { this->id = id; }
@@ -22,6 +23,7 @@ int Departamento::getId() { return id; }
 
 void Departamento::setNomeDepartamento(const char* nome) {
     strcpy(nomeDepartamento, nome);
+    pObjLDisciplinas->setNomeDptLista(nome);
 }
 
 char* Departamento::getNomeDepartamento() { return nomeDepartamento; }
@@ -31,34 +33,13 @@ void Departamento::setUniversidade(Universidade* u) { pUnivAssociada = u; }
 Universidade* Departamento::getUniversidade() { return pUnivAssociada; }
 
 void Departamento::incluirDisciplina(Disciplina* pD) {
-    if (pD != NULL) {
-        if (pDiscPrim == NULL) {
-            pDiscPrim = pD;
-            pDiscAtual = pD;
-        } else {
-            pDiscAtual->setProx(pD);
-            pD->setAnte(pDiscAtual);
-            pDiscAtual = pD;
-        }
-    }
+    pObjLDisciplinas->incluaDisciplina(pD);
 }
 
 void Departamento::listarDisciplinas() {
-    Disciplina* pAux = pDiscPrim;
-    while (pAux != NULL) {
-        cout << "A disciplina " << pAux->getNome()
-             << " pertence ao Departamento de " << getNomeDepartamento()
-             << endl;
-        pAux = pAux->getProx();
-    }
+    pObjLDisciplinas->listeDisciplinas();
 }
 
 void Departamento::listarDisciplinas2() {
-    Disciplina* pAux = pDiscAtual;
-    while (pAux != NULL) {
-        cout << "A disciplina " << pAux->getNome()
-             << " pertence ao Departamento de " << getNomeDepartamento()
-             << endl;
-        pAux = pAux->getAnte();
-    }
+   pObjLDisciplinas->listeDisciplinas2(); 
 }

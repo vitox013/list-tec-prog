@@ -4,20 +4,18 @@
 #include "Aluno.h"
 #include "Departamento.h"
 #include "ElemAluno.h"
+#include "ListaAlunos.h"
 
 class Disciplina {
    private:
     int id;
-    int numAlunos;
-    int contAlunos;
     char nomeDisc[100];
     char areaConhecimento[100];
 
     Departamento* pDptoAssociado;
     Disciplina* pProx;
     Disciplina* pAnte;
-    ElemAluno* pElemAlunoPrim;
-    ElemAluno* pElemAlunoAtual;
+    ListaAlunos ObjLAlunos;
 
    public:
     Disciplina(int na = 45, const char* ac = "");

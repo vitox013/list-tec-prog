@@ -1,14 +1,14 @@
 #pragma once
 class Disciplina;
 class Universidade;
+class ListaDisciplinas;
 
 class Departamento {
    private:
     int id;
     char nomeDepartamento[130];
-    Disciplina* pDiscPrim;
-    Disciplina* pDiscAtual;
     Universidade* pUnivAssociada;
+    ListaDisciplinas* pObjLDisciplinas;
 
    public:
     Departamento();
